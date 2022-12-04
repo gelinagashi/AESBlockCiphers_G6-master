@@ -195,3 +195,24 @@ namespace AES
             byte[,] splitKey = new byte[4,4];
 
             int xPos = 0, yPos = -1;
+            
+            for (int i = 0; i < keyBytes.Length; i++)
+            {
+                if (i % 4 == 0)
+                {
+                    yPos++;
+                    xPos = 0;
+
+                }
+
+                splitKey[xPos, yPos] = keyBytes[i];
+
+                xPos++;
+            }
+
+            roundKeys.Add(splitKey);
+
+            printMatrix("Key 0:", splitKey, 4);
+
+            byte[,] generatedKey = new byte[4,4];
+            //Start generating 10 other keys
