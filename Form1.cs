@@ -748,5 +748,18 @@ namespace AES
                     txt += "\r\n";
                 }
             }
+            
+            if (display == 0 && !blank)
+                txtStartRoundResult.Text += txt + "\r\n";
+            else if (display == 1)
+                txtSubBytesResult.Text += txt + "\r\n";
+            else if (display == 2)
+                txtShiftRowsResult.Text += txt + "\r\n";
+            else if (display == 3)
+                txtMixColumnsResult.Text += txt + "\r\n";
+            else if (display == 4)
+                txtKeyResult.Text += txt + "\r\n";
+        }
+
 
 
