@@ -240,3 +240,37 @@ namespace AES
             byte[] w0 = new byte[4];
             byte[] w3 = new byte[4];
 
+
+            for (int i = 0; i < 4; i++)
+            {
+                w0[i] = prevKey[i, 0];
+                w3[i] = prevKey[i, 3];
+            }
+                
+            
+            w3 = shiftByte(w3);
+
+            //translate w3 to values from sbox
+            w3 = exchangeW3(w3);
+
+            byte[] rcon = { rconTable[index], 0, 0, 0 };
+
+            for (int k = 0; k < 4; k++)
+            {
+                retKey[k,0] = (byte)(w0[k] ^ w3[k] ^ rcon[k]);
+            }
+            
+
+            // Generating W1, W2, W3
+            for (int i = 1; i < 4; i++)
+            {
+                newKey = new byte[4];
+
+                byte[] current = new byte[4];
+                byte[] prev = new byte[4];
+
+                for (int h = 0; h < 4; h++)
+                {
+                    prev[h] = prevKey[h, i];
+                    current[h] = retKey[h, i-1];
+                }
