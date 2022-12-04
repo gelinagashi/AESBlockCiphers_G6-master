@@ -141,4 +141,7 @@ namespace AES
         private List<byte[,]> generateKeys()
         {
             string key = txtKey.Text.Trim();
+            
+             //Add Padding
+            // we take 'o' character as default padding
 
