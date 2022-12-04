@@ -531,3 +531,31 @@ namespace AES
             }
             
         }
+        
+        private int getValueFromSbox(char x, char y)
+        {
+            int xPos = getPosFromHex(x);
+            int yPos = getPosFromHex(y);
+
+            int[,] matrix = getSboxMatrix();
+
+
+
+            return matrix[xPos, yPos];
+        }
+
+        private int getPosFromHex(char val)
+        {
+            char[] hexValues = {'0','1', '2', '3', '4', '5', '6', '7', '8',
+                                '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+
+            for(int i =0;i<16; i++)
+            {
+                if (Char.ToUpper(val) == hexValues[i])
+                    return i;
+            }
+
+            return -1;
+
+        }
+
