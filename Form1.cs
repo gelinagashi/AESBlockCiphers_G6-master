@@ -76,3 +76,6 @@ namespace AES
             
             //first round key
             int[,] finalMatrix = addRoundKey(keys[0], initialMatrix);
+            
+             int[,] subBytedMatrix, shiftedMatrix, mixedColumns;
+             int[,] roundedMatrix = new int[4, 4];
