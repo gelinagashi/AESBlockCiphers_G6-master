@@ -166,3 +166,32 @@ namespace AES
                 msg += keyBytes[i] + "\n";
 
             }
+/*
+            keyBytes[0] = 0x2b;
+            keyBytes[1] = 0x28;
+            keyBytes[2] = 0xab;
+            keyBytes[3] = 0x09;
+            keyBytes[4] = 0x7e;
+            keyBytes[5] = 0xae;
+            keyBytes[6] = 0xf7;
+            keyBytes[7] = 0xcf;
+            keyBytes[8] = 0x15;
+            keyBytes[9] = 0xd2;
+            keyBytes[10] = 0x15;
+            keyBytes[11] = 0x4f;
+            keyBytes[12] = 0x16;
+            keyBytes[13] = 0xa6;
+            keyBytes[14] = 0x88;
+            keyBytes[15] = 0x3c;
+            */
+
+            msg = "";
+            int index = 0;
+
+            //Prepare to save all keys here
+            List<byte[,]> roundKeys = new List<byte[,]>();
+
+            //split 128 bits to 4 sections with 4 bytes
+            byte[,] splitKey = new byte[4,4];
+
+            int xPos = 0, yPos = -1;
