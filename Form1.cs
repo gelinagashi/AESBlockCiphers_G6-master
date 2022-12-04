@@ -483,6 +483,51 @@ namespace AES
                 int[] bits = b.Cast<bool>().Select(bit => bit ? 1 : 0).ToArray();
 
                 int[] reverseBits = new int[8];
+ //we reverse it because b.Cast funciton 
+                //saves bits in reversed way
+                for (int i = 0; i < 8; i++)
+                    reverseBits[i] = bits[7-i];
 
 
-       
+                int shiftedVal = reverseBits[0];
+
+                int[] shiftedReverseBits = new int[8];
+                shiftedReverseBits = (shiftLeft(reverseBits, 1));
+
+                int res = 0;
+                //if left shifted value was 0
+                //return that array of bits
+                int[] xOredRes = new int[8];
+                if (shiftedVal == 0)
+                {
+                    res = bitArrayToInt(shiftedReverseBits);
+                }
+                //otherwise xor that array with a constant array 
+                //which is 1B
+                else
+                {
+                    int[] defaultVectorXor = { 0, 0, 0, 1, 1, 0, 1, 1 };
+                    xOredRes = xorBits(shiftedReverseBits,defaultVectorXor );
+
+                    res = bitArrayToInt(xOredRes);
+                }
+
+                if (x == 3)
+                {
+                    int[] xOredRes3 = new int[8];
+                    if (shiftedVal == 0) { 
+                        xOredRes3 = xorBits(reverseBits, shiftedReverseBits);
+                    }
+                    else
+                    {
+                        xOredRes3 = xorBits(reverseBits, xOredRes);
+                    }
+                    res = bitArrayToInt(xOredRes3);
+                   
+                }
+
+                return res;
+
+            }
+            
+        }
