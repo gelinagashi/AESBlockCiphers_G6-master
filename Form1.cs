@@ -216,3 +216,27 @@ namespace AES
 
             byte[,] generatedKey = new byte[4,4];
             //Start generating 10 other keys
+            
+             for (int i = 1; i < 11; i++)
+            {
+                generatedKey = getKey(roundKeys[i - 1], i - 1);
+                roundKeys.Add(generatedKey);
+
+                printMatrix("Key " + i + ": ", generatedKey, 4);
+            }
+
+            return roundKeys;
+        }
+
+        private byte[,] getKey(byte[,] prevKey, int index)
+        {
+            //Rcon Table
+            byte[] rconTable = { 1, 2, 4, 8, 16, 32, 64, 128, 27, 54};
+
+            byte[,] retKey = new byte[4,4];
+
+            byte[] newKey = new byte[4];
+
+            byte[] w0 = new byte[4];
+            byte[] w3 = new byte[4];
+
