@@ -31,3 +31,9 @@ namespace AES
             }
        List<byte[,]> keys = generateKeys();
        List<char[]> roundMessage = splitMessage(txtMessage.Text.Trim());
+       String encrypted = "";
+       
+            foreach (char[] chunk in roundMessage)
+            {
+                encrypted += encrypt(keys, chunk);
+            }
