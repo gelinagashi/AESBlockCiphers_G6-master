@@ -360,4 +360,28 @@ namespace AES
 
             return matrix;
         }
+        
+        private int[,] getMixedColumns(int [,] matrix)
+        {
+            /*
+            matrix = new int[4, 4] {
+                {0xd4, 0xe0, 0xb8, 0x1e },
+                {0xbf, 0xb4, 0x41, 0x27 },
+                {0x5d, 0x52, 0x11, 0x98 },
+                {0x30, 0xae, 0xf1, 0xe5 }
+            };
+            */
+
+            int[,] newMatrix = new int[4, 4];
+
+            string msg = "";
+            for(int a = 0; a < 4; a++)
+            {
+                for(int b = 0; b < 4; b++)
+                {
+                    msg += matrix[a, b] + " ";
+                }
+                msg += "\n";
+            }
+
        
