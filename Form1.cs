@@ -82,3 +82,5 @@ namespace AES
        
             for (int i = 0; i < 9; i++)
             {
+                printMatrix("Round: " + (i + 1) + " ", finalMatrix, 0, false);
+                subBytedMatrix = getSubBytes(finalMatrix);
