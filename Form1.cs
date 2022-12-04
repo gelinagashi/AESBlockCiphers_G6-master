@@ -26,5 +26,6 @@ namespace AES
            clearTextResults();
         if (txtKey.Text.Trim() == "" || txtMessage.Text.Trim() == "")
             {
-               
+                MessageBox.Show("Do not leave any field blank");
+                return;
             }
