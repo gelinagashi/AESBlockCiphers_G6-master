@@ -311,4 +311,28 @@ namespace AES
             int[,] subBytedMatrix = new int[4, 4];
 
             int xPos = 0, yPos = -1;
+              for (int i = 0; i < msLength; i++)
+            {
+                char x = hexMs[i][0];
+                char y = hexMs[i][1];
+
+                int val = getValueFromSbox(x, y);
+
+                if(i%4 == 0)
+                {
+                    yPos++;
+                    xPos = 0;
+                   
+                }
+
+                subBytedMatrix[yPos, xPos] = val;
+
+                xPos++;
+            }
+
+            //MessageBox.Show(subBytedMatrix.GetLength(0) + "");
+
+            return subBytedMatrix;
+        }
+
 
