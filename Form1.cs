@@ -98,3 +98,11 @@ namespace AES
                 
                 int a = 0;
             }
+            
+            printMatrix("Round: 10 ", finalMatrix, 0, false);
+            subBytedMatrix = getSubBytes(finalMatrix);
+
+
+            printMatrix("Round: 10 ", subBytedMatrix, 1, false);
+            shiftedMatrix = getShiftRows(subBytedMatrix);
+
