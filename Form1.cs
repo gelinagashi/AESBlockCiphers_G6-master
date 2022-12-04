@@ -127,3 +127,9 @@ namespace AES
                 for (int j = 0; j < 4; j++)
                     finalMatrix[i,j] = roundedMatrix[j,i];
             }
+            
+             for (int i=0;i<4;i++)
+            {
+                for (int j = 0; j < 4; j++)
+                    finalMessage += (char) roundedMatrix[j,i];
+            }   
