@@ -37,3 +37,7 @@ namespace AES
             {
                 encrypted += encrypt(keys, chunk);
             }
+            
+        txtCiphertext.Text = encrypted;
+            
+        }
