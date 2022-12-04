@@ -43,3 +43,8 @@ namespace AES
         }
           private string encrypt(List<byte[,]> keys, char[] roundMessage)
         {
+        
+            //convert message to matrix of bytes
+            int[,] initialMatrix = new int[4, 4];
+
+            int xPos = 0, yPos = -1;
