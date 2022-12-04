@@ -24,3 +24,7 @@ namespace AES
      private void btnEncrypt_Click(object sender, EventArgs e)
         {
            clearTextResults();
+        if (txtKey.Text.Trim() == "" || txtMessage.Text.Trim() == "")
+            {
+               
+            }
