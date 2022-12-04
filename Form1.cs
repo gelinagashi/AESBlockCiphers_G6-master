@@ -144,4 +144,8 @@ namespace AES
             
              //Add Padding
             // we take 'o' character as default padding
-
+            
+         for (int i = key.Length; i < 16; i++)
+            {
+                key += "o";
+            }
