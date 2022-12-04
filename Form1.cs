@@ -115,6 +115,9 @@ namespace AES
             printMatrix("Output: ", roundedMatrix, 0, false);
            
             string finalMessage = "";
+            
              //rotate matrix
             //we dont know why
             //but it is a must ??
+            
+             finalMatrix = new int[4, 4];
