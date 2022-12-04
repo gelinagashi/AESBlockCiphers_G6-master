@@ -47,7 +47,12 @@ namespace AES
             //convert message to matrix of bytes
             int[,] initialMatrix = new int[4, 4];
 
-            int xPos = 0, yPos = -1;
-            
-          for (int i = 0; i < 16; i++)
+            int xPos = 0, yPos = -1; 
+            for (int i = 0; i < 16; i++)
             {
+            if (i % 4 == 0)
+                {
+                    yPos++;
+                    xPos = 0;
+
+                }
