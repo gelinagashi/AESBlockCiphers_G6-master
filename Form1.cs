@@ -649,4 +649,78 @@ namespace AES
 
             return retMessage;
         }
+        
+        private byte[] shiftByte(byte[] toShift)
+        {
+            byte[] ret = new byte[4];
+
+            byte tmp = toShift[0];
+
+            for(int i = 0; i<3; i++)
+            {
+                ret[i] = toShift[i + 1];
+            }
+
+            ret[3] = tmp;
+
+            return ret;
+        }
+
+
+
+        private int[] shiftLeft(int[] toShift, int shifts)
+        {
+            int[] arr = new int[8];
+
+            while (shifts > 0)
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    arr[i] = toShift[i + 1];
+                }
+
+                arr[7] = 0;
+
+                
+                shifts--;
+            }
+
+            return arr;
+        }
+
+        private int[] intToBitArray(int x)
+        {
+            BitArray b = new BitArray(new byte[] { (byte)x });
+            int[] bits = b.Cast<bool>().Select(bit => bit ? 1 : 0).ToArray();
+
+            int[] reverseBits = new int[8];
+
+            //we reverse it because b.Cast funciton 
+            //saves bits in reversed way
+            for (int i = 0; i < 8; i++)
+                reverseBits[i] = bits[7 - i];
+
+            return reverseBits;
+        }
+
+        private int bitArrayToInt(int[] reverseBits)
+        {
+            double val = 0;
+            for(int i = 0; i < 8; i++)
+            {
+                val += Math.Pow(2, 7-i) * reverseBits[i];
+            }
+
+            return (int) val;
+        }
+
+        private int[] xorBits(int[] x, int[] y)
+        {
+            int[] retArr = new int[8];
+
+            for (int i = 0; i < 8; i++)
+                retArr[i] = x[i] ^ y[i];
+
+            return retArr;
+        }
 
