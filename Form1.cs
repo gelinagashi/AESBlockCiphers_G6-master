@@ -595,5 +595,58 @@ namespace AES
 
             return matrix;
         }
+      private List<char[]> splitMessage(string message)
+        {
+            int msLength = message.Length;
+            if (msLength == 16)
+            {
+                return new List<char[]>() { message.ToCharArray() };
+            }
 
+            if (msLength < 16)
+            {
+                //Add Padding
+                // we take 'o' character as default padding
+                for (int i = msLength; i < 16; i++)
+                {
+                    message += "o";
+                }
+
+                return new List<char[]>() { message.ToCharArray() };
+            }
+
+
+            //Add Padding
+            // we take 'o' character as default padding
+           
+            while(message.Length % 16 != 0)
+            {
+                message += "o";
+            }
+
+            List<char[]> retMessage = new List<char[]>();
+            //split into strings of size 16
+
+            char[] chunk = new char[16];
+
+
+            int index = 0;
+            for (int i = 0; i < msLength; i++)
+            {
+                if ((i % 16 == 0))
+                { 
+                    index = 0;
+                    chunk = new char[16];
+
+                    retMessage.Add(chunk);
+                }
+
+                chunk[index] = message[i];
+                index++;
+            }
+
+
+
+            return retMessage;
+        }
 
