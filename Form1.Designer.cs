@@ -206,3 +206,53 @@ namespace AES
             // 
             // Form1
             // 
+     this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1056, 450);
+            this.Controls.Add(this.txtMixColumnsResult);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtShiftRowsResult);
+            this.Controls.Add(this.txtSubBytesResult);
+            this.Controls.Add(this.txtStartRoundResult);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtKeyResult);
+            this.Controls.Add(this.txtCiphertext);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnEncrypt);
+            this.Controls.Add(this.lblPlain);
+            this.Controls.Add(this.lblKey);
+            this.Controls.Add(this.txtKey);
+            this.Controls.Add(this.txtMessage);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox txtMessage;
+        private System.Windows.Forms.TextBox txtKey;
+        private System.Windows.Forms.Label lblKey;
+        private System.Windows.Forms.Label lblPlain;
+        private System.Windows.Forms.Button btnEncrypt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCiphertext;
+        private System.Windows.Forms.TextBox txtKeyResult;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtStartRoundResult;
+        private System.Windows.Forms.TextBox txtSubBytesResult;
+        private System.Windows.Forms.TextBox txtShiftRowsResult;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtMixColumnsResult;
+    }
+}
+
