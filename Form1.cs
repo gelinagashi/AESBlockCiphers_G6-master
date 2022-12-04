@@ -383,5 +383,40 @@ namespace AES
                 }
                 msg += "\n";
             }
+          
+            int[,] rgfMatrix = getRGFMatrix();
+            string resMsg = "";
+            //Matrix multiply
+            for(int i = 0; i < 4; i++)
+            {
+                for(int j = 0; j < 4; j++)
+                {
+                    resMsg = "";
+                    int res = 0;
+                    for(int k = 0; k < 4; k++)
+                    {
+                        int sendX = rgfMatrix[j, k];
 
+                        int sendY = matrix[k, i];
+
+                        /*
+                         int sendX = rgfMatrix[i, k];
+
+                        int sendY = matrix[k, j];
+                         */
+
+                        int x = multiplyBits(sendX, sendY);
+
+                        resMsg += "X:" + sendX + " Y:" + sendY + " Res:" + x+"\n";
+                        //MessageBox.Show(resMsg);
+                        if (res == 0)
+                            res = x;
+                        else
+                            res = res ^ x;
+                    }
+                    newMatrix[j,i] = res;
+                }
+            }
+
+            return newMatrix;
        
