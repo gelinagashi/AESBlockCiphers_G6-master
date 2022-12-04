@@ -274,3 +274,41 @@ namespace AES
                     prev[h] = prevKey[h, i];
                     current[h] = retKey[h, i-1];
                 }
+                
+                //byte[] current = prevKey[i];
+                //byte[] prev = retKey[i - 1];
+
+                for (int j = 0; j < 4; j++)
+                {
+                    byte b = (byte)(current[j] ^ prev[j]);
+                    retKey[j, i] = b;
+                }
+                int a = 5;
+            }
+
+            return retKey;
+        }
+
+
+        private int[,] getSubBytes(int[,] inMatrix)
+        {
+
+            string[] hexMs = new string[16];
+            //return message to hex
+            int index = 0;
+
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    hexMs[index] = inMatrix[i, j].ToString("x2");
+                    index++;
+                }
+            }
+
+            int msLength = hexMs.Length;
+
+            int[,] subBytedMatrix = new int[4, 4];
+
+            int xPos = 0, yPos = -1;
+
