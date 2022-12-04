@@ -73,3 +73,6 @@ namespace AES
             printMatrix("Input:", initialMatrix, 1, true);
             printMatrix("Input:", initialMatrix, 2, true);
             printMatrix("Input:", initialMatrix, 3, true);
+            
+            //first round key
+            int[,] finalMatrix = addRoundKey(keys[0], initialMatrix);
