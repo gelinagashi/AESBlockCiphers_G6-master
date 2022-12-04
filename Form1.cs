@@ -20,3 +20,6 @@ namespace AES
         {
 
         }
+       
+     private void btnEncrypt_Click(object sender, EventArgs e)
+        {
