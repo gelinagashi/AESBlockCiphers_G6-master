@@ -419,4 +419,44 @@ namespace AES
             }
 
             return newMatrix;
+             }
+
+        private int[,] addRoundKey(byte[,] key, int[,] matrix)
+        {
+            /*
+            key = new List<byte[]>();
+            byte[] b = { 0xa0, 0x88, 0x23, 0x2a };
+            key.Add(b);
+
+
+            byte[] b2 = { 0xfa, 0x54, 0xa3, 0x6c };
+            key.Add(b2);
+
+            byte[] b3 = { 0xfe, 0x2c, 0x39, 0x76 };
+            key.Add(b3);
+
+
+            byte[] b1 = { 0x17, 0xb1, 0x39, 0x05 };
+            key.Add(b1);
+            */
+
+            int[,] roundedMatrix = new int[4, 4];
+
+            for(int i = 0; i < 4; i++)
+            {
+                for(int j = 0; j < 4; j++)
+                {   
+                    int[] xBits = intToBitArray(key[i,j]);
+
+                    int[] yBits = intToBitArray(matrix[i,j]);
+
+                    int[] res = xorBits(xBits, yBits);
+
+                    roundedMatrix[i, j] = bitArrayToInt(res); 
+                }
+            }
+
+            return roundedMatrix;
+        }
+
        
