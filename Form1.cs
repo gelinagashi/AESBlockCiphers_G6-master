@@ -723,4 +723,30 @@ namespace AES
 
             return retArr;
         }
+        
+
+        private void printMatrix(string title, int[,] matrix, int display, bool blank)
+        {
+            string txt = "";
+
+            if (blank)
+            {
+                txt = "\r\n\r\n\r\n\r\n\r\n\r\n";
+            }
+            else
+            {
+
+                txt = title + "\r\n\r\n";
+
+                for (int i = 0; i < 4; i++)
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        txt += matrix[i, j] + "  ";
+                    }
+
+                    txt += "\r\n";
+                }
+            }
+
 
