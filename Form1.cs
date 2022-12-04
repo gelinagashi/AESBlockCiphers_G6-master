@@ -84,3 +84,9 @@ namespace AES
             {
                 printMatrix("Round: " + (i + 1) + " ", finalMatrix, 0, false);
                 subBytedMatrix = getSubBytes(finalMatrix);
+
+                printMatrix("Round: " + (i + 1) + " ", subBytedMatrix, 1, false);
+                shiftedMatrix = getShiftRows(subBytedMatrix);
+
+                printMatrix("Round: " + (i + 1) + " ", shiftedMatrix, 2, false);
+                mixedColumns = getMixedColumns(shiftedMatrix);
