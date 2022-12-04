@@ -760,6 +760,32 @@ namespace AES
             else if (display == 4)
                 txtKeyResult.Text += txt + "\r\n";
         }
+        private void printMatrix(string title, byte[,] matrix, int display)
+        {
+            string txt = title + "\r\n\r\n";
+
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    txt += matrix[i, j] + "  ";
+                }
+
+                txt += "\r\n";
+            }
+
+
+            if(display == 0)
+                txtStartRoundResult.Text += txt + "\r\n";
+            else if (display == 1)
+                txtSubBytesResult.Text += txt + "\r\n";
+            else if (display == 2)
+                txtShiftRowsResult.Text += txt + "\r\n";
+            else if (display == 3)
+                txtMixColumnsResult.Text += txt + "\r\n";
+            else if (display == 4)
+                txtKeyResult.Text += txt + "\r\n";
+        }
 
 
 
