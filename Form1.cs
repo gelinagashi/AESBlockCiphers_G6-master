@@ -113,3 +113,5 @@ namespace AES
             printMatrix("Round: 10 ", finalMatrix, 3, true);
 
             printMatrix("Output: ", roundedMatrix, 0, false);
+           
+            string finalMessage = "";
