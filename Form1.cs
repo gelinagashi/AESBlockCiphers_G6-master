@@ -458,5 +458,31 @@ namespace AES
 
             return roundedMatrix;
         }
+        private byte[] exchangeW3(byte[] w3)
+        {
+            byte[] retW3 = new byte[4];
+
+            for(int i = 0; i < 4; i++)
+            {
+                //return value to hex
+                string val =  w3[i].ToString("x2");
+                int intVal = getValueFromSbox(val[0], val[1]);
+                retW3[i] = (byte) intVal;
+            }
+
+            return retW3;
+        }
+
+        private int multiplyBits(int x, int y)
+        {
+            if (x == 1)
+                return y;
+            else
+            {
+                BitArray b = new BitArray(new byte[] { (byte) y });
+                int[] bits = b.Cast<bool>().Select(bit => bit ? 1 : 0).ToArray();
+
+                int[] reverseBits = new int[8];
+
 
        
