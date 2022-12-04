@@ -786,6 +786,22 @@ namespace AES
             else if (display == 4)
                 txtKeyResult.Text += txt + "\r\n";
         }
+        
+        private void clearTextResults()
+        {
+            txtStartRoundResult.Clear();
+            txtSubBytesResult.Clear();
+            txtShiftRowsResult.Clear();
+            txtMixColumnsResult.Clear();
+            txtKeyResult.Clear();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
 
 
 
