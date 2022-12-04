@@ -158,3 +158,11 @@ namespace AES
             byte[] keyHex = new byte[16];
              string msg = "";
             //store characters as bytes
+            
+            for (int i = 0; i < 16; i++)
+            {
+                keyBytes[i] = (byte)keyChars[i];
+
+                msg += keyBytes[i] + "\n";
+
+            }
