@@ -95,3 +95,6 @@ namespace AES
                 roundedMatrix = addRoundKey(keys[i+1], mixedColumns);
 
                 finalMatrix = roundedMatrix;
+                
+                int a = 0;
+            }
