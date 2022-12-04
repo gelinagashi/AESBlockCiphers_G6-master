@@ -334,5 +334,30 @@ namespace AES
 
             return subBytedMatrix;
         }
+          private int[,] getShiftRows(int[,] matrix)
+        {
+     
+            for(int i = 1; i < 4; i++)
+            {
+
+                int shifts = i;
+                while (shifts > 0)
+                {
+                    int tmp = matrix[i,0];
+
+                    for (int j = 0; j < 3; j++)
+                    {
+                        matrix[i,j] = matrix[i,j+1];
+                    }
+
+                    matrix[i,3] = tmp;
 
 
+                    shifts--;
+                }
+
+            }
+
+            return matrix;
+        }
+       
