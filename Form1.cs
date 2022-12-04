@@ -79,3 +79,6 @@ namespace AES
             
              int[,] subBytedMatrix, shiftedMatrix, mixedColumns;
              int[,] roundedMatrix = new int[4, 4];
+       
+            for (int i = 0; i < 9; i++)
+            {
