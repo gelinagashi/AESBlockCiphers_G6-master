@@ -105,4 +105,11 @@ namespace AES
 
             printMatrix("Round: 10 ", subBytedMatrix, 1, false);
             shiftedMatrix = getShiftRows(subBytedMatrix);
+           
+            printMatrix("Round: 10 ", shiftedMatrix, 2, false);
+            roundedMatrix = addRoundKey(keys[10], shiftedMatrix);
 
+
+            printMatrix("Round: 10 ", finalMatrix, 3, true);
+
+            printMatrix("Output: ", roundedMatrix, 0, false);
