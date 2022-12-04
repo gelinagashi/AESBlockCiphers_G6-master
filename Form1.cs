@@ -156,3 +156,5 @@ namespace AES
             //prepare array to get byte equivalent of chars
             byte[] keyBytes = new byte[16];
             byte[] keyHex = new byte[16];
+             string msg = "";
+            //store characters as bytes
