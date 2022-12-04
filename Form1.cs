@@ -90,3 +90,8 @@ namespace AES
 
                 printMatrix("Round: " + (i + 1) + " ", shiftedMatrix, 2, false);
                 mixedColumns = getMixedColumns(shiftedMatrix);
+                
+                printMatrix("Round: " + (i + 1) + " ", mixedColumns, 3, false);
+                roundedMatrix = addRoundKey(keys[i+1], mixedColumns);
+
+                finalMatrix = roundedMatrix;
