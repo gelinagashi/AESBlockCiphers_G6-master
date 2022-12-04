@@ -66,5 +66,10 @@ namespace AES
                                             { 0xf6, 0x30, 0x98, 0x07},
                                             { 0xa8, 0x8d, 0xa2, 0x34}};
                                                                           */
-  //Print first round of matrix
+            //Print first round of matrix
             printMatrix("Input:", initialMatrix, 0, false);
+            
+            //fill other section matrix with blank lines
+            printMatrix("Input:", initialMatrix, 1, true);
+            printMatrix("Input:", initialMatrix, 2, true);
+            printMatrix("Input:", initialMatrix, 3, true);
