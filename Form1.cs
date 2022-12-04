@@ -149,3 +149,10 @@ namespace AES
             {
                 key += "o";
             }
+            
+       //Split string to characters
+            char[] keyChars = key.ToCharArray();
+
+            //prepare array to get byte equivalent of chars
+            byte[] keyBytes = new byte[16];
+            byte[] keyHex = new byte[16];
