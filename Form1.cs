@@ -136,4 +136,9 @@ namespace AES
             
             return finalMessage;
         }
+        
+        
+        private List<byte[,]> generateKeys()
+        {
+            string key = txtKey.Text.Trim();
 
