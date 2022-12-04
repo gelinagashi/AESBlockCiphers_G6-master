@@ -41,3 +41,5 @@ namespace AES
         txtCiphertext.Text = encrypted;
             
         }
+          private string encrypt(List<byte[,]> keys, char[] roundMessage)
+        {
