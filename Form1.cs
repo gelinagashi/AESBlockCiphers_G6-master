@@ -48,3 +48,6 @@ namespace AES
             int[,] initialMatrix = new int[4, 4];
 
             int xPos = 0, yPos = -1;
+            
+          for (int i = 0; i < 16; i++)
+            {
