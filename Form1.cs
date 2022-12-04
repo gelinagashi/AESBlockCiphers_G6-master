@@ -56,3 +56,7 @@ namespace AES
                     xPos = 0;
 
                 }
+                initialMatrix[xPos, yPos] = (byte) roundMessage[i];
+
+                xPos++;
+            }
