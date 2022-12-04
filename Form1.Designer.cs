@@ -169,3 +169,40 @@ namespace AES
             // 
             // label4
             // 
+     this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(334, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "After SubBytes";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(488, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "After Shift Rows";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(642, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "After Mix Columns";
+            // 
+            // txtMixColumnsResult
+            // 
+            this.txtMixColumnsResult.Location = new System.Drawing.Point(645, 47);
+            this.txtMixColumnsResult.Multiline = true;
+            this.txtMixColumnsResult.Name = "txtMixColumnsResult";
+            this.txtMixColumnsResult.ReadOnly = true;
+            this.txtMixColumnsResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMixColumnsResult.Size = new System.Drawing.Size(148, 318);
+            this.txtMixColumnsResult.TabIndex = 15;
+            // 
+            // Form1
+            // 
