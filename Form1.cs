@@ -29,3 +29,5 @@ namespace AES
                 MessageBox.Show("Do not leave any field blank");
                 return;
             }
+       List<byte[,]> keys = generateKeys();
+       List<char[]> roundMessage = splitMessage(txtMessage.Text.Trim());
